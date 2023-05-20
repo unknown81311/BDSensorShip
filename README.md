@@ -1,4 +1,4 @@
 # BDSensorShip
 ```css
-@import url(https://raw.githubusercontent.com/unknown81311/BDSensorShip/main/style.css);
+@import url(https://unknown81311.github.io/BDSensorShip/style.css);
 ```
