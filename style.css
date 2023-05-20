@@ -1,0 +1,40 @@
+.userPopoutInner-nv9Y92:has(.input-2z42oC[disabled]) img:not(.profileBadge22-3GAYRy),
+.scrollerInner-2PPAp2>.groupStart-3Mlgv1:not(.backgroundFlash-1X5jVs) .avatar-2e8lTP,
+[src*="a_83593d007aeb93323e32b58634aec6d"],
+[style*="315546955637850112"],
+[src*="61858072873245083"],
+[src*="646855140883693598"],
+[src*="499852856480759821"],
+[src*="23039723580686336"],
+[src*="118489956812455937"],
+[src*="1012284795432206336"],
+[src*="57979276586149481"],
+[src*="25646066552969625"],
+[src*="315546955637850112"],
+[src*="405006137432342529"],
+[src*="609445260606701593"],
+[href*="820437739681742898"]~div,
+[href*="657603264228884489"]~div>img,
+[src*="protoge"],
+[src*="46656638599312181"],
+[src*="90008266551921869"],
+[src*="35241164257676493"],
+[style*="75837029616372942"],
+[src*="49389542252845468"],
+[src*="52622459654294733"],
+[src*="84048845513778790"],
+[src*="43774503212076239"],
+[src*="104921753902201657"],
+[src*="19122191887826944"],
+[src*="45253612307650972"],
+[src*="icons/758370296163729422"]{
+	filter: blur(20px) !important;
+    clip-path: circle(50%);
+}
+.bannerImg-2PzH6z{
+    clip-path: none !important;
+}
+
+[aria-label=":transgender_flag:"],[alt="🏳️‍⚧️"]{
+    display:none !important;
+}
