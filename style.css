@@ -225,6 +225,6 @@
     clip-path: none !important;
 }
 
-[aria-label=":transgender_flag:"],[alt="🏳️‍⚧️"]{
+[aria-label=":transgender_flag:"],[alt="🏳️‍⚧️"],[alt*="pride"]{
     display:none !important;
 }
