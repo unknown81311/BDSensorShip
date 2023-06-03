@@ -1,6 +1,6 @@
 /**
  * @name no pride
- * @description saves all server icons before june and replaces the icons during june
+ * @description saves all icons before june and replaces the icons during june
  * @version 1.0
  * @authorId 359174224809689089
  */
@@ -23,12 +23,12 @@ module.exports = class noPride {
       if(!r)return r;
 
       if (this.currentDate.getMonth()+1 != 6){
-        r = BdApi.Data.save("noPride", name, {[args[0].id]:r});
+        r = BdApi.Data.save("noPride", name, {[args[0].id] : r});
       }
       if (this.currentDate.getMonth()+1 == 6){
         r = BdApi.Data.load("noPride", name)[args[0].id];
       }
-      return r||res;
+      return r || res;
   }
 
   start() {
@@ -46,7 +46,7 @@ module.exports = class noPride {
   }
   stop() {
     this.noPrideGuildPatch();
-    // this.noPrideUserBanner();
-    // this.noPrideUserAvatar();
+    this.noPrideUserBanner();
+    this.noPrideUserAvatar();
   } 
 }
