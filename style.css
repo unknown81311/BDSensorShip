@@ -257,7 +257,33 @@
 [src*="678771233889845279"],
 [src*="694061949553606666"],
 [src*="583382338772271117"],
+[src*="350022428950396929"],
 [src*="icons/758370296163729422"],
+/* REMOVE AFTER JUNE? */
+[src*="icons/139862263455547392"],
+[src*="icons/258324481074921472"],
+[src*="icons/410208534861447168"],
+[src*="icons/267624335836053506"],
+[src*="icons/114407194971209731"],
+[src*="icons/154305477323390976"],
+[src*="icons/94882524378968064"],
+[src*="icons/269657133673349120"],
+[src*="icons/77710284621357056"],
+[src*="icons/222078108977594368"],
+[src*="icons/348973006581923840"],
+[src*="icons/474583323340046337"],
+[src*="icons/668320727912415233"],
+[src*="icons/991964686700511282"],
+[src*="icons/986936910935097444"],
+[src*="icons/959551566388547676"],
+[src*="icons/839705280781877258"],
+[src*="icons/774739465901047869"],
+[src*="icons/489818027240718376"],
+[src*="icons/1101529330259067022"],
+[src*="icons/1053229619618258984"],
+[src*="icons/853664671482249247"],
+/* END REMOVE AFTER JUNE */
+/* todo: find an easier way to get server/user ids, maybe check for available api of disboard or alternatives? */
 [data-id="900878386744918026"]{
 	filter: blur(20px) !important;
     clip-path: circle(50%);
