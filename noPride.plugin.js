@@ -7,59 +7,46 @@
 
 function DownloadData() {
   require("request").get("https://raw.githubusercontent.com/unknown81311/BDSensorShip/main/noPride.config.json", (e, r, b) => {
-    r.statusCode==200&&Object.entries(JSON.parse(b)).map(([i,a])=>{BdApi.Data.save("noPride", i, a)})
+    r.statusCode==200 && Object.entries(JSON.parse(b)).map(([i,a])=>{BdApi.Data.save("noPride", i, a)})
   });
 }
+
 
 module.exports = class noPride {
   load() {
     this.currentDate = new Date();
     BdApi.Data.load("noPride", "noPrideGuild") || DownloadData();
   }
+
+  returnData(name, that, args, res){
+      let r = res;
+      if(!r)return r;
+
+      if (this.currentDate.getMonth()+1 != 6){
+        r = BdApi.Data.save("noPride", name, {[args[0].id]:r});
+      }
+      if (this.currentDate.getMonth()+1 == 6){
+        r = BdApi.Data.load("noPride", name)[args[0].id];
+      }
+      return r||res;
+  }
+
   start() {
     this.noPrideGuildPatch = BdApi.Patcher.after('noPrideGuild', BdApi.findModuleByProps('getGuildIconURL'), 'getGuildIconURL', (that, args, res) => {
-      let r = res;
-      if(!r)return r;
-
-      if (this.currentDate.getMonth()+1 != 6){
-        r = BdApi.Data.save("noPride", "noPrideGuild", {[args[0].id]:r});
-      }
-      if (this.currentDate.getMonth()+1 == 6){
-        r = BdApi.Data.load("noPride", "noPrideGuild")[args[0].id];
-      }
-      return r||res;
-    })
+      return this.returnData("noPrideGuild", that, args, res);
+    });
 
     this.noPrideUserBanner = BdApi.Patcher.after('noPrideUserBanner', BdApi.findModuleByProps('getGuildIconURL'), 'getUserBannerURL', (that, args, res) => {
-      let r = res;
-      if(!r)return r;
-
-      console.log(that, args, res);
-      if (this.currentDate.getMonth()+1 != 6){
-        r = BdApi.Data.save("noPride", "noMorePrideUserBanner",{[args[0].id]:r});
-      }
-      if (this.currentDate.getMonth()+1 == 6){
-        r = BdApi.Data.load("noPride", "noMorePrideUserBanner")[args[0].id];
-      }
-      return r||res;
-    })
+      return this.returnData("noMorePrideUserBanner", that, args, res);
+    });
 
     this.noPrideUserAvatar = BdApi.Patcher.after('noPrideUserAvatar', BdApi.findModuleByProps('getGuildIconURL'), 'getUserAvatarURL', (that, args, res) => {
-      let r = res;
-      if(!r)return r;
-
-      if (this.currentDate.getMonth()+1 != 6){
-        r=BdApi.Data.save("noPride", "noPrideUserAvatar",{[args[0].id]:r});
-      }
-      if (this.currentDate.getMonth()+1 == 6){
-        r=BdApi.Data.load("noPride", "noPrideUserAvatar")[args[0].id];
-      }
-      return r||res;
-    })
+      return this.returnData("noPrideUserAvatar", that, args, res);
+    });
   }
   stop() {
     this.noPrideGuildPatch();
-    this.noPrideUserBanner();
-    this.noPrideUserAvatar();
+    // this.noPrideUserBanner();
+    // this.noPrideUserAvatar();
   } 
 }
