@@ -13,4 +13,8 @@ def interpret_return(input_string):
 
 # usage
 interpret_string("pride,bi", "alt*=")
+# for guild icons
+# interpret_string("icons/267624335836053506,icons/154305477323390976", "src*=")
+# interpret_string("icons/267624335836053506,icons/154305477323390976", "style*=")
 
+#todo: crawler to grab guilds(users) with tags on disboard
