@@ -47,7 +47,7 @@ module.exports = class noPride {
     });
 
     this.bages = BdApi.Patcher.after("QUADL", BdApi.Webpack.getModule(module => module.V?.SIZE_18), "Z", (that, args, res) => {
-      if (!res || !BdApi.findModuleByProps('getUserProfile').getUserProfile(args[0].user.id).bio.toLowerCase().indexOf("quadl")==-1) return;
+      if (!res || BdApi.findModuleByProps('getUserProfile').getUserProfile(args[0].user.id).bio.toLowerCase().indexOf("quadl")==-1) return;
       res.props.children.push(React.createElement("div", {
         children: [
           React.createElement("img", {
