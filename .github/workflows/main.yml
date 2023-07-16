@@ -42,7 +42,7 @@ jobs:
             output_css="${output_css}[href*=\"${id}\"],\n"
           done
 
-          # Add the ZZZ rule bc the last command and too lazy
+          # Add the ZZZ rule at the end
           output_css="${output_css}zzz {filter:blur(20px)!important;clip-path:circle(50%)}\n"
           
           # Save the output CSS to the file
