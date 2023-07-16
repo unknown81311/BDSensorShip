@@ -35,8 +35,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add converted_styles.css
-          git commit -m "Convert src attributes to href in CSS"
+          git config user.name "GitHub Actions"
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "updated CSS"
           git push
