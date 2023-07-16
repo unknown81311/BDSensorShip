@@ -22,6 +22,14 @@ jobs:
             const jsonContent = fs.readFileSync('ids.json', 'utf8');
             console.log(`::set-output name=json_content::${jsonContent}`);
 
+      - name: Debug JSON content
+        run: |
+          echo "${{ steps.read_json.outputs.json_content }}"
+          
+      - name: Debug CSS rules
+        run: |
+          cat custom_css_rules.css
+
       - name: Convert CSS
         run: |
           # Get the JSON input from the previous step
