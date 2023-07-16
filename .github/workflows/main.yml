@@ -39,11 +39,11 @@ jobs:
           # Loop through the IDs and generate the CSS rules
           output_css=""
           for id in $(echo "${input_json}" | jq -r '.ids[]'); do
-            output_css="${output_css}[href*=\"${id}\"] { filter: blur(20px) !important; clip-path: circle(50%); }\n"
+            output_css="${output_css}[href*=\"${id}\"],\n"
           done
 
-          # Add the default rule for zzz
-          output_css="${output_css}zzz { filter: blur(20px) !important; clip-path: circle(50%); }\n"
+          # Add the ZZZ rule bc the last command and too lazy
+          output_css="${output_css}zzz {filter:blur(20px)!important;clip-path:circle(50%)}\n"
           
           # Save the output CSS to the file
           echo -e "${output_css}" > converted_styles.css
