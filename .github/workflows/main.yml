@@ -37,6 +37,7 @@ jobs:
             echo -e "[href*=\"${id}\"] {\n  /* Your CSS rules for ID ${id} */\n}\n" >> converted_styles.css
           done
 
+            console.log(`::set-output name=CSS_content::${converted_styles.css}`);
           cat converted_styles.css
 
       - name: Commit changes
