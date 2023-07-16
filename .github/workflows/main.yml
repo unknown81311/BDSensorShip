@@ -1,0 +1,42 @@
+name: Convert CSS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  convert_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Read JSON input
+        id: read_json
+        run: |
+          content=$(cat ids.json)
+          echo "::set-output name=json_content::$content"
+
+      - name: Convert CSS
+        run: |
+          # Get the JSON input from the previous step
+          input_json="${{ steps.read_json.outputs.json_content }}"
+          
+          # Loop through the IDs and generate the CSS rules
+          output_css=""
+          for id in $(echo "${input_json}" | jq -r '.ids[]'); do
+            output_css="${output_css}[href*=\"${id}\"] { /* Your CSS rules here */ }\n"
+          done
+          
+          # Save the output CSS to a file
+          echo -e "${output_css}" > converted_styles.css
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add converted_styles.css
+          git commit -m "Convert src attributes to href in CSS"
+          git push
