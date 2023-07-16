@@ -15,17 +15,17 @@ jobs:
 
       - name: Read JSON input
         id: read_json
-        run: |
-          echo "JSON_CONTENT=$(cat ids.json)" >> $GITHUB_ENV
-
-      - name: Print JSON content
-        run: |
-          cat ids.json
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const fs = require('fs');
+            const jsonContent = fs.readFileSync('ids.json', 'utf8');
+            console.log(`::set-output name=json_content::${jsonContent}`);
 
       - name: Convert CSS
         run: |
-          # Get the JSON input from the environment variable
-          input_json="$JSON_CONTENT"
+          # Get the JSON input from the previous step
+          input_json="${{ steps.read_json.outputs.json_content }}"
           
           # Loop through the IDs and generate the CSS rules
           output_css=""
