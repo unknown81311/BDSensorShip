@@ -16,27 +16,31 @@ jobs:
       - name: Read JSON input
         id: read_json
         run: |
-          content=$(cat ids.json)
-          echo "::set-output name=json_content::$content"
+          echo "JSON_CONTENT=$(cat ids.json)" >> $GITHUB_ENV
+
+      - name: Print JSON content
+        run: |
+          cat ids.json
 
       - name: Convert CSS
         run: |
-          # Get the JSON input from the previous step
-          input_json="${{ steps.read_json.outputs.json_content }}"
+          # Get the JSON input from the environment variable
+          input_json="$JSON_CONTENT"
           
           # Loop through the IDs and generate the CSS rules
           output_css=""
           for id in $(echo "${input_json}" | jq -r '.ids[]'); do
-            output_css="${output_css}[href*=\"${id}\"] { /* Your CSS rules here */ }\n"
+            output_css="${output_css}[href*=\"${id}\"], {filter:blur(20px)!important;clip-path:circle(50%)}\n"
           done
+            output_css=output_css + "zzz\n{filter:blur(20px)!important;clip-path:circle(50%)}\n"
           
           # Save the output CSS to a file
           echo -e "${output_css}" > converted_styles.css
 
       - name: Commit changes
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "updated CSS"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add converted_styles.css
+          git commit -m "Convert src attributes to href in CSS"
           git push
