@@ -18,51 +18,22 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            const fs = require('fs');
-            const jsonContent = fs.readFileSync('ids.json', 'utf8');
-            console.log(`::set-output name=json_content::${jsonContent}`);
-
-      - name: Debug JSON content
-        run: |
-          echo "${{ steps.read_json.outputs.json_content }}"
-          
-      - name: Debug CSS rules
-        run: |
-          cat custom_css_rules.css
+            const jsonContent = require('./test.json');
+            const css = `${jsonContent.IDs.map(e=>`[href*="${e}"],[src*="${e}"]`).join(",")}\n{filter:blur(20px)!important;clip-path:circle(50%)}`
+            console.log(`::set-output name=css_content::${css}`);
 
       - name: Convert CSS
         run: |
           # Get the JSON input from the previous step
-          input_json="${{ steps.read_json.outputs.json_content }}"
-
-          # Check if the input_json is empty (no content in ids.json)
-          if [ -z "$input_json" ]; then
-            echo "Error: JSON input is empty."
-            exit 1
-          fi
-          
-          # Save the output CSS to a file
-          echo -n "" > converted_styles.css
-
-          # Loop through the IDs and generate the CSS rules
-          output_css=""
-          for id in $(echo "${input_json}" | jq -r '.ids[]'); do
-            output_css="${output_css}[href*=\"${id}\"],\n"
-          done
-
-          # Add the ZZZ rule at the end
-          output_css="${output_css}zzz {filter:blur(20px)!important;clip-path:circle(50%)}\n"
+          css_content="${{ steps.read_json.outputs.css_content }}"
           
           # Save the output CSS to the file
-          echo -e "${output_css}" > converted_styles.css
-
-          # Print the CSS content before submitting
-          cat converted_styles.css
+          echo -e "${css_content}" > style.css
 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add converted_styles.css
-          git commit -m "Convert src attributes to href in CSS"
+          git add style.css
+          git commit -m "Convert json to CSS"
           git push
