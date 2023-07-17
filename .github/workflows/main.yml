@@ -19,7 +19,7 @@ jobs:
         with:
           script: |
             const jsonContent = require('./ids.json');
-            const css = `${jsonContent.ids.map(e=>`[href*=""${e}""],[src*=""${e}""]`).join(",")}{filter:blur(20px)!important;clip-path:circle(50%)}`
+            const css = `${jsonContent.ids.map(e=>`[style*=""${e}""],[src*=""${e}""]`).join(",")}{filter:blur(20px)!important;clip-path:circle(50%)}`
             console.log(`::set-output name=css_content::${css}`);
 
       - name: Convert CSS
