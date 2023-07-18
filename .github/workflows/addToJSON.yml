@@ -1,0 +1,54 @@
+name: Add ID to JSON
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add_id:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Read JSON file
+        id: read_json
+        run: |
+          json_content=$(cat ids.json)
+          echo "::set-output name=json_content::$json_content"
+
+      - name: Prompt for ID
+        id: prompt_id
+        run: |
+          echo "Enter the ID you want to add:"
+          read -r new_id
+          echo "::set-output name=new_id::$new_id"
+
+      - name: Update JSON file
+        run: |
+          # Get the JSON content from the previous step
+          json_content="${{ steps.read_json.outputs.json_content }}"
+
+          # Get the new ID from the prompt
+          new_id="${{ steps.prompt_id.outputs.new_id }}"
+
+          # Check if the new_id is empty
+          if [ -z "$new_id" ]; then
+            echo "Error: ID is empty. Please provide a valid ID."
+            exit 1
+          fi
+
+          # Add the new ID to the JSON content
+          updated_json="${json_content%]}" # Remove the closing bracket
+          updated_json="${updated_json}, \"$new_id\"]" # Add the new ID
+          
+          # Save the updated JSON to the file
+          echo -e "$updated_json" > ids.json
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add ids.json
+          git commit -m "Add ID: ${{ steps.prompt_id.outputs.new_id }}"
+          git push
