@@ -23,9 +23,9 @@ jobs:
           script: |
             let jsonContent = require("./ids.json");
             jsonContent.ids.push("${{ inputs.newID }}")
-            console.log(`::set-output name=new_json::${jsonContent}`);
+            console.log(`::set-output name=new_json::${JSON.toString(jsonContent)}`);
 
-      - name: Convert CSS
+      - name: Create New JSON
         run: |
           # Get the JSON input from the previous step
           new_json='${{ steps.read_json.outputs.new_json }}'
