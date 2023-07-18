@@ -2,6 +2,11 @@ name: Add ID to JSON
 
 on:
   workflow_dispatch:
+    inputs:
+      newID:
+        description: new ID to add
+        required: true
+        type: string
 
 jobs:
   add_id:
@@ -11,44 +16,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Read JSON file
+      - name: Read JSON input
         id: read_json
+        uses: actions/github-script@v4
+        with:
+          script: |
+            let jsonContent = require("./ids.json");
+            jsonContent.ids.push("${{ inputs.newID }}")
+            console.log(`::set-output name=new_json::${jsonContent}`);
+
+      - name: Convert CSS
         run: |
-          json_content=$(cat ids.json)
-          echo "::set-output name=json_content::$json_content"
-
-      - name: Prompt for ID
-        id: prompt_id
-        run: |
-          echo "Enter the ID you want to add:"
-          read -r new_id
-          echo "::set-output name=new_id::$new_id"
-
-      - name: Update JSON file
-        run: |
-          # Get the JSON content from the previous step
-          json_content="${{ steps.read_json.outputs.json_content }}"
-
-          # Get the new ID from the prompt
-          new_id="${{ steps.prompt_id.outputs.new_id }}"
-
-          # Check if the new_id is empty
-          if [ -z "$new_id" ]; then
-            echo "Error: ID is empty. Please provide a valid ID."
-            exit 1
-          fi
-
-          # Add the new ID to the JSON content
-          updated_json="${json_content%]}" # Remove the closing bracket
-          updated_json="${updated_json}, \"$new_id\"]" # Add the new ID
+          # Get the JSON input from the previous step
+          new_json='${{ steps.read_json.outputs.new_json }}'
           
-          # Save the updated JSON to the file
-          echo -e "$updated_json" > ids.json
+          # Save the output CSS to the file
+          echo -e "${new_json}" > ids.json
 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add ids.json
-          git commit -m "Add ID: ${{ steps.prompt_id.outputs.new_id }}"
+          git add style.css
+          git commit -m "Convert json to CSS"
           git push
