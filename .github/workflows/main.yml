@@ -28,10 +28,7 @@ jobs:
 
       - name: Convert CSS
         run: |
-          # Get the JSON input from the previous step
           css_content='${{ steps.read_json.outputs.css_content }}'
-          
-          # Save the output CSS to the file
           echo -e "${css_content}" > style.css
 
       - name: Commit changes
