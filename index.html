@@ -1,511 +1,70 @@
-<html lang="en" data-color-mode="dark" data-light-theme="light" data-dark-theme="dark_dimmed" data-a11y-animated-images="system" data-darkreader-mode="dynamic" data-darkreader-scheme="dark" class="js-focus-visible" data-js-focus-visible="" data-turbo-loaded=""><head><style type="text/css">.turbo-progress-bar {
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: #0076ff;
-  z-index: 2147483647;
-  transition:
-    width 300ms ease-out,
-    opacity 150ms 150ms ease-in;
-  transform: translate3d(0, 0, 0);
-}
-</style><style class="darkreader darkreader--sync" media="screen"></style><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator, [src="https://github.githubassets.com/images/modules/site/icons/footer/github-logo.svg"], [src^="https://github.githubassets.com/images/modules/site/home/community-sponsor-"], [src^="https://github.githubassets.com/images/modules/site/home/community-readme-"], [src^="https://github.githubassets.com/images/modules/site/home/community-discussions-"], [src="https://github.githubassets.com/images/modules/site/home/dependabot-merge.png"], [src="https://github.githubassets.com/images/modules/site/home/dependabot-pr.png"], [src="https://github.githubassets.com/images/modules/site/home/gh-desktop.png"], [src="https://github.githubassets.com/images/modules/site/home/pr-merge.png"], [src="https://github.githubassets.com/images/modules/site/home/pr-comment.png"], [src="https://github.githubassets.com/images/modules/site/home/pr-description.png"], [src="https://github.githubassets.com/images/modules/site/home/pr-screen.png"], [src="https://github.githubassets.com/images/modules/site/home/enterprise-city-w-logos.jpg"], [src="https://github.githubassets.com/images/modules/site/codespaces/codespaces-icon.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/dependency-rust.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/dependency-3.png"], [src^="https://github.githubassets.com/images/modules/site/codespaces/dependencies-"], [src="https://github.githubassets.com/images/modules/site/codespaces/commit-3.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/extensions-1.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/extensions-2.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/commit-workflow.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/workflow-view.png"], [src="https://github.githubassets.com/images/modules/site/codespaces/code.png"], [src="https://github.githubassets.com/images/email/explore/explore-gradient-icon.png"], [src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/learn-to-code/learn-to-code.png"], .js-viewport-aware-video.color-bg-primary.width-full.d-block.codespaces-hero-video, .build-in-animate.position-relative.mb-6-fluid.box-shadow-active-mktg.mx-auto.home-mobile-iphone.build-in-slideY.js-build-in > .js-viewport-aware-video.width-full, .overflow-hidden.position-relative.box-shadow-active-border-mktg.rounded-2-fluid.color-bg-primary.build-in-scale-fade.js-build-in-item, .build-in-animate.overflow-hidden.box-shadow-active-border-mktg.rounded-2-fluid.position-relative.home-workflow-comp.js-build-in-item, .mx-lg-auto.col-lg-7.col-12 {
-    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
-}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
-  background-color: var(--darkreader-inline-bgcolor) !important;
-}
-[data-darkreader-inline-bgimage] {
-  background-image: var(--darkreader-inline-bgimage) !important;
-}
-[data-darkreader-inline-border] {
-  border-color: var(--darkreader-inline-border) !important;
-}
-[data-darkreader-inline-border-bottom] {
-  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
-}
-[data-darkreader-inline-border-left] {
-  border-left-color: var(--darkreader-inline-border-left) !important;
-}
-[data-darkreader-inline-border-right] {
-  border-right-color: var(--darkreader-inline-border-right) !important;
-}
-[data-darkreader-inline-border-top] {
-  border-top-color: var(--darkreader-inline-border-top) !important;
-}
-[data-darkreader-inline-boxshadow] {
-  box-shadow: var(--darkreader-inline-boxshadow) !important;
-}
-[data-darkreader-inline-color] {
-  color: var(--darkreader-inline-color) !important;
-}
-[data-darkreader-inline-fill] {
-  fill: var(--darkreader-inline-fill) !important;
-}
-[data-darkreader-inline-stroke] {
-  stroke: var(--darkreader-inline-stroke) !important;
-}
-[data-darkreader-inline-outline] {
-  outline-color: var(--darkreader-inline-outline) !important;
-}
-[data-darkreader-inline-stopcolor] {
-  stop-color: var(--darkreader-inline-stopcolor) !important;
-}</style><style class="darkreader darkreader--variables" media="screen">:root {
-   --darkreader-neutral-background: #131516;
-   --darkreader-neutral-text: #d8d4cf;
-   --darkreader-selection-background: #004daa;
-   --darkreader-selection-text: #e8e6e3;
-}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
-    background-color: #181a1b !important;
-}
-html {
-    color-scheme: dark !important;
-}
-html, body {
-    background-color: #181a1b;
-}
-html, body {
-    border-color: #736b5e;
-    color: #e8e6e3;
-}
-a {
-    color: #3391ff;
-}
-table {
-    border-color: #545b5e;
-}
-::placeholder {
-    color: #b2aba1;
-}
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: #404400 !important;
-    color: #e8e6e3 !important;
-}
-::-webkit-scrollbar {
-    background-color: #202324;
-    color: #aba499;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #454a4d;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #575e62;
-}
-::-webkit-scrollbar-thumb:active {
-    background-color: #484e51;
-}
-::-webkit-scrollbar-corner {
-    background-color: #181a1b;
-}
-::selection {
-    background-color: #004daa !important;
-    color: #e8e6e3 !important;
-}
-::-moz-selection {
-    background-color: #004daa !important;
-    color: #e8e6e3 !important;
-}</style>
-    <meta charset="utf-8">
-  <link rel="dns-prefetch" href="https://github.githubassets.com">
-  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
-  <link rel="preconnect" href="https://github.githubassets.com" crossorigin="">
-  <link rel="preconnect" href="https://avatars.githubusercontent.com">
+<center>
+  <h1>BDSensorShip</h1>
+</center>
+<div class="contianer">
+  <div id="text"><span style="color:#f47067">@import</span> <span style="color:#dcbdfb">url</span>(https://unknown81311.github.io/BDSensorShip/style.css);</div>
+  <button onclick="copyToClipboard()" style="background:#2d333b;border:none;fill:#adbac7;padding:0 20px"><svg height="16" viewBox="0 0 16 16" version="1.1" width="16">
+      <path d="m5 1.75c0-.966.784-1.75 1.75-1.75h7.5c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 01-1.75 1.75h-7.5a1.75 1.75 0 01-1.75-1.75zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25zm-6.75 5.25c0-.966.784-1.75 1.75-1.75h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5a1.75 1.75 0 01-1.75 1.75h-7.5a1.75 1.75 0 01-1.75-1.75z"></path>
+    </svg></button>
+</div>
+<div class="contianer2">
+  <table>
+    <thead>
+      <tr>
+        <th>before</th>
+        <th>after</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="https://github.com/unknown81311/BDSensorShip/assets/43104779/4517c3ba-c39d-4d37-9220-b31cfe5871da"></td>
+        <td><img src="https://github.com/unknown81311/BDSensorShip/assets/43104779/4b3b6e86-1c50-427d-819f-021e50b8faf6"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  
-
-
-  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark_dimmed-9b9a8c91acc5.css"><style class="darkreader darkreader--sync" media="screen"></style><link data-color-theme="light" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light-0946cdc16f15.css"><link data-color-theme="dark" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark-3946c959759a.css"><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-11302a585e33.css"><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-1a4564ab0fbf.css"><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-12a8b2aa9101.css"><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-5924a648f3e7.css"><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-05358496cb79.css"><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-aad6b801a158.css">
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-fb1d51d1ef66.css"><style class="darkreader darkreader--sync" media="screen"></style>
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-57c312e484b2.css"><style class="darkreader darkreader--sync" media="screen"></style>
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-0d04dfcdc794.css"><style class="darkreader darkreader--sync" media="screen"></style>
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-c7a3a0ac71d4.css"><style class="darkreader darkreader--sync" media="screen"></style>
-  <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/code-536dffbfff5a.css"><style class="darkreader darkreader--sync" media="screen"></style>
-
-
-
-  <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-377d421cc9f7.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-a4c183-ae93d3fba59c.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_failbot_failbot_ts-e38c93eab86e.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/environment-de3997b81651.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_selector-observer_dist_index_esm_js-2646a2c533e3.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_relative-time-element_dist_index_js-99e288659d4f.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_fzy_js_index_js-node_modules_github_markdown-toolbar-element_dist_index_js-e3de700a4c9d.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_auto-complete-element-5b3870-ff38694180c6.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_github_text-ex-3415a8-7ecc10fb88d0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_remote-inp-8873b7-5771678648e0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_view-components_app_components_primer_primer_js-node_modules_gith-3af896-ba2b2ef33e4b.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/github-elements-7b037525f59f.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-8f404beaf269.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_lit-html_lit-html_js-9d9fe1859ce5.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_alive-client_dist-bf5aa2-424aa982deef.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ba0e4d5b3207.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_color-convert_index_js-node_modules_github_jtml_lib_index_js-40bf234a19dc.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_scroll-anchoring_dist_scro-52dc4b-e1e33bfc0b7e.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_paste-markdown_dist_index_esm_js-node_modules_github_quote-select-743f1d-1b20d530fbf0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_updatable-content_ts-dadb69f79923.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_keyboard-shortcuts-helper_ts-app_assets_modules_github_be-f5afdb-3f05df4c282b.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_blob-anchor_ts-app_assets_modules_github_code-editor_ts-app_assets_-8128e1-65aa849c94d7.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_sticky-scroll-into-view_ts-1d145b63ed56.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-2e2258-dae7d38e0248.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_commenting_edit_ts-app_assets_modules_github_behaviors_ht-83c235-c97eacdef68a.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/behaviors-d1b433c1b6c2.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_catalyst_lib_index_js-623425af41e1.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/notifications-global-4dc6f295cc92.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/code-menu-da1cefc25b0a.js"></script>
-  
-  <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-lib-26cb888452e9.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_octicons-react_dist_index_esm_js-node_modules_primer_react_lib-es-ca6dae-a1133077cb2e.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Button_index_js-node_modules_primer_react_lib-esm_L-5634ab-42e8568c9a37.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_focus-zone_js-d55308df5023.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_ActionList_index_js-node_modules_primer_react_lib-e-d264d6-f9d3bc6f32ea.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-64d590970fa6.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_ActionMenu_js-9f46ef9292fe.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_scroll-into-view_js-node_modules_primer_react_-04bb1b-dadff286ba44.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_FormControl_FormControl_js-a0b171a7401f.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Dialog_ConfirmationDialog_js-node_modules_primer_re-3d8a84-e777e763812a.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_PageLayout_PageLayout_js-4fa99e9ebc43.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_TreeView_TreeView_js-24fd33d383d9.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Avatar_Avatar_js-node_modules_primer_react_lib-esm_-9d76dd-90f908d64068.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_blackbird-parser_dist_blackbird_js-fcd9d30e9b7e.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_UnderlineNav2_index_js-node_modules_react-router-do-3a0e98-3da6649648f5.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_AvatarStack_AvatarStack_js-node_modules_primer_reac-528269-51c7de1de076.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_react_lib-esm_Button_LinkButton_js-node_modules_primer_react_lib--6e3f86-46f1f5d7b3f6.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_deferred-registry_ts-ui_packages_react-core_AppContextProvider_tsx-ui_-ffd985-18d5698b6549.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_react-core_Entry_tsx-8c7cce1646a4.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_paths_path_ts-ui_packages_verified-fetch_verified-fetch_ts-ui_packages_safe-html_-d7e3f1-8681e57cea17.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_react-shared_RefSelector_RefSelector_tsx-0ade0381bf11.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_blackbird-monolith_hooks_use-navigate-to-query_ts-app_assets_modules_black-182e14-4606bbb51ec6.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_trusted-types-policies_policy_ts-ui_packages_trusted-types_trusted-types_ts-app_a-af1c83-c0b6ae48f7ea.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/react-code-view-3986245d6fec.js"></script>
-
-
-  <title>BDSensorShip/README.md at main · unknown81311/BDSensorShip · GitHub</title>
-
-
-
-  <meta name="route-pattern" content="/:user_id/:repository/blob/*name(/*path)">
-
-    
-  <meta name="current-catalog-service-hash" content="581425c0eaaa5e5e53c5b736f58a14dbe5d38b0be425901738ad0670bd1d5a33">
-
-
-  <meta name="request-id" content="FBBD:0DCD:60BCE7E:65E0ACB:646ACC69" data-turbo-transient="true"><meta name="html-safe-nonce" content="d2602e2c55c79421c613978caf48d5798f7d86314eb2c70e0f54d09a17e3f841" data-turbo-transient="true"><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS91bmtub3duODEzMTE/dGFiPXJlcG9zaXRvcmllcyIsInJlcXVlc3RfaWQiOiJGQkJEOjBEQ0Q6NjBCQ0U3RTo2NUUwQUNCOjY0NkFDQzY5IiwidmlzaXRvcl9pZCI6Ijg4MDIyNDQxNjAwODc5MzY4ODEiLCJyZWdpb25fZWRnZSI6InNlYSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-turbo-transient="true"><meta name="visitor-hmac" content="260d9c1c9ee3bfdcb83d115d7bc1588eff1f7f93bde5aa468ab18a943bf4e2d0" data-turbo-transient="true">
-
-
-    <meta name="hovercard-subject-tag" content="repository:643052249" data-turbo-transient="">
-
-
-  <meta name="github-keyboard-shortcuts" content="repository,source-code,file-tree" data-turbo-transient="true">
-  
-
-  <meta name="selected-link" value="repo_source" data-turbo-transient="">
-  <link rel="assets" href="https://github.githubassets.com/">
-
-    <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY">
-  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
-  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
-  <meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
-
-<meta name="octolytics-url" content="https://collector.github.com/github/collect"><meta name="octolytics-actor-id" content="43104779"><meta name="octolytics-actor-login" content="unknown81311"><meta name="octolytics-actor-hash" content="18c2be0e54c3da78549f14289728915ef0936a5ae944c60007d531556f5cf2e7">
-
-  <meta name="analytics-location" content="/<user-name>/<repo-name>/blob/show" data-turbo-transient="true">
-
-  
-
-
-
-
-  
-
-    <meta name="user-login" content="unknown81311">
-
-  <link rel="sudo-modal" href="/sessions/sudo_modal">
-
-    <meta name="viewport" content="width=device-width">
-    
-      <meta name="description" content="Contribute to unknown81311/BDSensorShip development by creating an account on GitHub.">
-      <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-    <meta property="fb:app_id" content="1401488693436528">
-    <meta name="apple-itunes-app" content="app-id=1477376905">
-      <meta name="twitter:image:src" content="https://opengraph.githubassets.com/8f9135ce9716226e2fe78f32734a3b6944173b30f15a6b9fc8254170153c089c/unknown81311/BDSensorShip"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="BDSensorShip/README.md at main · unknown81311/BDSensorShip"><meta name="twitter:description" content="Contribute to unknown81311/BDSensorShip development by creating an account on GitHub.">
-      <meta property="og:image" content="https://opengraph.githubassets.com/8f9135ce9716226e2fe78f32734a3b6944173b30f15a6b9fc8254170153c089c/unknown81311/BDSensorShip"><meta property="og:image:alt" content="Contribute to unknown81311/BDSensorShip development by creating an account on GitHub."><meta property="og:image:width" content="1200"><meta property="og:image:height" content="600"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="BDSensorShip/README.md at main · unknown81311/BDSensorShip"><meta property="og:url" content="https://github.com/unknown81311/BDSensorShip"><meta property="og:description" content="Contribute to unknown81311/BDSensorShip development by creating an account on GitHub.">
-      
-
-      <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/43104779/ws?session=eyJ2IjoiVjMiLCJ1Ijo0MzEwNDc3OSwicyI6MTEwNzQ2NDQzOCwiYyI6MzI2MjczNjgzMSwidCI6MTY4NDcyMDc0NX0=--69d1b19e434de964941cdd57833b58b2c929bbb35d4c48ad125b3874c6f1c83b" data-refresh-url="/_alive" data-session-id="24f28b50dafbd97a98612a90522c7bf9ef2462dd833831702ef3146c247ce593">
-      <link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-71e98f781d79.js">
-
-
-        <meta name="hostname" content="github.com">
-
-
-      <meta name="keyboard-shortcuts-preference" content="all">
-
-        <meta name="expected-hostname" content="github.com">
-
-    <meta name="enabled-features" content="TURBO_EXPERIMENT_RISKY,IMAGE_METRIC_TRACKING,GEOJSON_AZURE_MAPS">
-
-
-  <meta http-equiv="x-pjax-version" content="3807c417764ef84ea7031968fd961b802b0cb95a11ee99ccfca958ed7b1d7914" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-csp-version" content="0db263f9a873141d8256f783c35f244c06d490aacc3b680f99794dd8fd59fb59" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-css-version" content="e8aa01474d0c779a222d3c578e207f1c2a3df88c4896c35f0c67bac5015a1869" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-js-version" content="f70ea5b9052274af7e78261f6d80aa2ae693009e3f178b2df9ff5f579348cca6" data-turbo-track="reload">
-
-  <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
-
-      <meta name="turbo-cache-control" content="no-cache" data-turbo-transient="">
-    <meta data-hydrostats="publish">
-
-  <meta name="go-import" content="github.com/unknown81311/BDSensorShip git https://github.com/unknown81311/BDSensorShip.git">
-
-  <meta name="octolytics-dimension-user_id" content="43104779"><meta name="octolytics-dimension-user_login" content="unknown81311"><meta name="octolytics-dimension-repository_id" content="643052249"><meta name="octolytics-dimension-repository_nwo" content="unknown81311/BDSensorShip"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="643052249"><meta name="octolytics-dimension-repository_network_root_nwo" content="unknown81311/BDSensorShip">
-
-
-
-  <meta name="turbo-body-classes" content="logged-in env-production page-responsive">
-
-
-  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-
-  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
-
-  <meta name="browser-optimizely-client-errors-url" content="https://api.github.com/_private/browser/optimizely_client/errors">
-
-  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
-  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon-dark.png">
-  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon-dark.svg">
-
-<meta name="theme-color" content="#181c1f">
-<meta name="color-scheme" content="dark light">
-
-
-  <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
-
-  <meta name="darkreader" content="5bd7a19426d741809d05d2f5532ce2ec"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
-    background-color: #7b5300 !important;
-    border-color: #d8b013 !important;
-    color: #f3e8c8 !important;
+<style>
+  body {
+  color: #adbac7;
+  background: #22272e;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-::placeholder {
-    opacity: 0.5 !important;
+img {
+  width: 20rem;
 }
-#edge-translate-panel-body,
-.MuiTypography-body1,
-.nfe-quote-text {
-    color: var(--darkreader-neutral-text) !important;
+body > div {
+  display: flex;
+  justify-content: center;
 }
-gr-main-header {
-    background-color: #0f3a48 !important;
-}
-.tou-z65h9k,
-.tou-mignzq,
-.tou-1b6i2ox,
-.tou-lnqlqk {
-    background-color: var(--darkreader-neutral-background) !important;
-}
-.tou-75mvi {
-    background-color: #032029 !important;
-}
-.tou-ta9e87,
-.tou-1w3fhi0,
-.tou-1b8t2us,
-.tou-py7lfi,
-.tou-1lpmd9d,
-.tou-1frrtv8,
-.tou-17ezmgn {
-    background-color: #0a0a0a !important;
-}
-.tou-uknfeu {
-    background-color: #231603 !important;
-}
-.tou-6i3zyv {
-    background-color: #19576c !important;
-}
-embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
-.markdown-body code,
-.markdown-body pre,
-.markdown-title code {
-    background-color: rgba(220, 224, 228, 0.1) !important;
-}
-.markdown-body pre code {
-    background-color: transparent !important;
-}
-.refined-github .dashboard .js-all-activity-header + div {
-    background-color: #17181c !important;
-    border-color: #363c44 !important;
-}
-.refined-github .dashboard-rollup-items .body {
-    border-top-color: #363c44 !important;
-}
-.refined-github .reaction-summary-item a {
-    box-shadow: 0 0 0 2px #000000 !important;
-}
-.refined-github button.reaction-summary-item {
-    border-top-color: rgb(52, 59, 68) !important;
-    border-bottom: rgb(77, 172, 253) !important;
-}
-.js-site-search-form {
-    background-color: #ffffff1a !important;
-    border-radius: 2pt !important;
-}
-.blob-num:not(.cc-coverage-covered-border):not(.cc-coverage-missed-border) {
-    border-right: 0 !important;
-}
-.cc-issue-description {
-    color: #24292e !important;
-}
-.cc-readup-background {
-    background-color: rgb(28, 30, 31) !important
-}
-.cc-readup-content {
-    border-left: 1px solid grey !important;
-    color: rgb(216, 214, 208) !important;
-}
-.cc-readup-content blockquote {
-    border-left: 3px solid dimgrey !important;
-}
-.cc-pr__link-text {
-    color: darkgrey !important;
-}
-.cc-pr__tooltip {
-    background-color: rgb(28, 30, 31) !important;
-    color: darkgrey !important;
-}
-.jfk-bubble, .octotree-sidebar, .cc-pr__logo, .cc-octicon, #network canvas, img.network-tree {
-    filter: invert(94.4%) hue-rotate(180deg) contrast(90%) !important;
-}
-.blob-code-inner, .blob-code-inner > *, .CodeMirror pre > span, .CodeMirror-linenumber {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace !important;
-}
-#commit-activity-detail > svg {
-    fill: #ffffff !important;
-}
-.ContributionCalendar-day,
-.ContributionCalendar-day[data-level="0"] {
-    fill: var(--color-calendar-graph-day-bg) !important;
-}
-.ContributionCalendar-day[data-level="1"] {
-    fill: var(--color-calendar-graph-day-L1-bg) !important;
-}
-.ContributionCalendar-day[data-level="2"] {
-    fill: var(--color-calendar-graph-day-L2-bg) !important;
-}
-.ContributionCalendar-day[data-level="3"] {
-    fill: var(--color-calendar-graph-day-L3-bg) !important;
-}
-.ContributionCalendar-day[data-level="4"] {
-    fill: var(--color-calendar-graph-day-L4-bg) !important;
-}
-.day,
-.day[data-Count="0"] {
-    fill: var(--color-calendar-graph-day-bg) !important;
-}
-.day[data-Count="1"] {
-    fill: var(--color-calendar-graph-day-L1-bg) !important;
-}
-.day[data-Count="2"] {
-    fill: var(--color-calendar-graph-day-L2-bg) !important;
-}
-.day[data-Count="3"] {
-    fill: var(--color-calendar-graph-day-L3-bg) !important;
-}
-.day[data-Count="4"] {
-    fill: var(--color-calendar-graph-day-L4-bg) !important;
-}
-:root {
-    --color-previewable-comment-form-bg: var(--darkreader-neutral-background) !important;
-    --color-calendar-graph-day-bg: #0f1114 !important;
-    --color-calendar-graph-day-L1-bg: #277534 !important;
-    --color-calendar-graph-day-L2-bg: #50d473 !important;
-    --color-calendar-graph-day-L3-bg: #70e18e !important;
-    --color-calendar-graph-day-L4-bg: #9be8b3 !important;
-}
-.Box-row--yellow {
-    background-color: #191500 !important;
-}
-.merge-status-list {
-    border-color: #373c3e !important;
-}
-.user-has-reacted {
-    background-color: rgba(17, 88, 199, 0.2) !important;
-}
-.hx_IssueLabel {
-    background: rgb(var(--label-r),var(--label-g),var(--label-b)) !important;
-    color: hsl(0,0%,calc(var(--lightness-switch)*100%)) !important;
-    border-color: hsla(var(--label-h),calc(var(--label-s)*1%),calc((var(--label-l) - 25)*1%),var(--border-alpha)) !important;
-}
-.header-search-input {
-    border: 0 !important;
-}
-.HeaderMenu-link--sign-in {
-    border: 0 !important;
-}
-.timeline-comment--caret.current-user::after {
-    --color-current-user-tip-bg: var(--darkreader-bg--color-box-bg-info) !important;
-}
-.timeline-comment--caret.current-user::before {
-    background-color: var(--darkreader-border--color-box-border-info) !important;
-}
-@media screen and (min-width: 1012px) {
-    markdown-toolbar.border-lg-top-0 {
-        border-top: 1px solid var(--darkreader-border--color-border-primary) !important;
-    }
-}
-@media screen and (max-width: 767px) {
-    div.tabnav--responsive button.tabnav-tab {
-        --color-border-primary: var(--darkreader-border--color-border-primary) !important;
-    }
-}
-.TimelineItem-badge[style^="background-color: var(--color-timeline-merged-bg)"] {
-    background-color: var(--color-timeline-merged-bg) !important;
-}
-.ContributionCalendar-label {
-    --color-text-primary: var(--darkreader-neutral-text) !important;
-}
-article div[style^="background: linear-gradient"] {
-    background: linear-gradient(to top, var(--darkreader-bg--color-bg-primary), transparent) !important;
-}</style><style data-styled="active" data-styled-version="5.3.6"></style><style class="darkreader darkreader--sync" media="screen"></style></head>
 
-  <body class="logged-in env-production page-responsive" style="word-wrap: break-word;">
-    <div class="Box-sc-g0xbh4-0 cTsUqU js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-bdsensorship" class="anchor" aria-hidden="true" href="#bdsensorship"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>BDSensorShip</h1>
-<div class="highlight highlight-source-css notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">@import</span> <span class="pl-en">url</span>(https://unknown81311.github.io/BDSensorShip/style.css);</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@import url(https://unknown81311.github.io/BDSensorShip/style.css);" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
-  </div></div>
-<table>
-<thead>
-<tr>
-<th>before</th>
-<th>after</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/43104779/239764578-afeffe12-4d5b-42e3-8734-474cc28933c6.png"><img src="https://user-images.githubusercontent.com/43104779/239764578-afeffe12-4d5b-42e3-8734-474cc28933c6.png" alt="image" style="max-width: 100%;"></a></td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/43104779/239764587-c8f4ac1e-535a-4baf-897d-ab6db935c1ed.png"><img src="https://user-images.githubusercontent.com/43104779/239764587-c8f4ac1e-535a-4baf-897d-ab6db935c1ed.png" alt="image" style="max-width: 100%;"></a></td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/43104779/239764680-60f2ec62-401f-4579-a46d-d7be2d0f473d.png"><img src="https://user-images.githubusercontent.com/43104779/239764680-60f2ec62-401f-4579-a46d-d7be2d0f473d.png" alt="image" style="max-width: 100%;"></a></td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/43104779/239764714-3cdaf7fb-cf75-493d-a390-5c8e0528ea4e.png"><img src="https://user-images.githubusercontent.com/43104779/239764714-3cdaf7fb-cf75-493d-a390-5c8e0528ea4e.png" alt="image" style="max-width: 100%;"></a></td>
-</tr>
-</tbody>
-</table>
-</article></div>
+div#text {
+  background: rgb(45, 51, 59);
+  padding: 16px;
+}
+button:active {
+  fill: #57ab5a !important;
+}
 
-    <div id="js-global-screen-reader-notice" class="sr-only" aria-live="polite">BDSensorShip/README.md at main · unknown81311/BDSensorShip · GitHub</div>
-  
-
-
-</body></html>
+table,
+tr,
+th {
+  border: 1px solid gray !important;
+}
+</style>
+<script>
+  function copyToClipboard() {
+  var copyText = document.getElementById("text");
+  var tempInput = document.createElement("textarea");
+  tempInput.value = copyText.innerText;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+}
+</script>
